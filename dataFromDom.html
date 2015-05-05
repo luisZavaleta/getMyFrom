@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/vulcano-not-util-yet.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		var params = [ {
+			"selector" : ".hola",
+			"type" : "html",
+			"name" : "hola"
+		}, {
+			"selector" : ".adios",
+			"type" : "html",
+			"name" : "adios"
+		}, {
+			"selector" : "td input",
+			"type" : "val",
+			"name" : "ok"
+		} ]
+
+		var values = vulcanoUtil.getCollectionFromDOM("tr", params)
+
+		console.log(JSON.stringify(values))
+
+		var params2 = [ {
+			"selector" : ".divTest",
+			"type" : "html",
+			"name" : "test1"
+		}, {
+			"selector" : "tr",
+			"name" : "tabla",
+			"data" : [ {
+				"selector" : ".hola",
+				"type" : "html",
+				"name" : "hola"
+			}, {
+				"selector" : ".adios",
+				"type" : "html",
+				"name" : "adios"
+			}, {
+				"selector" : "td input",
+				"type" : "val",
+				"name" : "ok"
+			} ],
+			"type" : "collection"
+
+		}, {
+			"selector" : ".divTest2 input",
+			"type" : "val",
+			"name" : "test2"
+		} ];
+
+		var data = vulcanoUtil.getDataFromForm(params2)
+		console.log(JSON.stringify(data))
+	});
+</script>
+</head>
+<body>
+	<table style="width: 100%" class="reference">
+		<tbody>
+			<tr>
+				<th>Number</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Points</th>
+			</tr>
+			<tr>
+				<td class="hola">1</td>
+				<td class="adios">Eve</td>
+				<td>
+					<input value="ok0" />
+				</td>
+				<td>94</td>
+			</tr>
+			<tr>
+				<td class="hola">2</td>
+				<td class="adios">John</td>
+				<td>
+					<input value="ok1" />
+				</td>
+				<td>80</td>
+			</tr>
+			<tr>
+				<td class="hola">3</td>
+				<td class="adios">Adam</td>
+				<td>
+					<input value="ok2" />
+				</td>
+				<td>67</td>
+			</tr>
+			<tr>
+				<td class="hola">4</td>
+				<td class="adios">Jill</td>
+				<td>
+					<input value="ok3" />
+				</td>
+				<td>50</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="divTest">Luis</div>
+	<div class="divTest2">
+		<input value="Zavaleta" />
+	</div>
+</body>
+</html>

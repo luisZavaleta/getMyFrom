@@ -1,0 +1,50 @@
+<div style="display: none">
+	<div id="emf-form">
+		<form role="form" class="%formClass%">%emfFormContent%</form>
+	</div>
+	<div id="emf-formGroup">
+		<div class="form-group %emfFormGroupWidth%">%emfFormGroupLabel% %emfFormGroupInput%</div>
+	</div>
+	<div id="emf-formLabel">
+		<label style="" class="%emfFormLabelClass%" for="%emfFormLabelFor%"> %emfFormLabelValue% </label>
+	</div>
+	<div id="emf-formInput">
+		%emfFormInputBefore%
+		<input type="%emfFormInputType%" style="" class="form-control" id="%emfFormInputId%" placeholder="%emfFormInputPlaceHolder%" />
+		%emfFormInputAfter%
+	</div>
+	<div id="emf-formTextarea">
+		%emfFormInputBefore%
+		<textarea type="%emfFormInputType%" style="" rows="%emfFormTextareaRows%" class="form-control" id="%emfFormInputId%"
+			placeholder="%emfFormInputPlaceHolder%"></textarea>
+		%emfFormInputAfter%
+	</div>
+	<div id="emf-formCheckbox">
+		%emfFormCheckboxBefore%
+		<label class="%emfFormCheckboxLabelClass%">
+			<input %disabled% id="%emfFormCheckboxId%" name="%emfFormCheckboxName%" type="%checkOrRadioType%" value="%emfFormCheckboxValue%">
+			%emfFormCheckboxText%
+		</label>
+		%emfFormCheckboxAfter%
+	</div>
+	<!-- SELECT -->
+	<div id="emf-formSelect">
+		%emfFormSelectBefore%
+		<select id="%emfFormSelectId%" data-placeholder="%emfSelectPlaceholder%" style="width: 100%;">%emfSelectOptions%
+		</select>
+		%emfFormSelectAfter%
+	</div>
+	<!-- STACKED -->
+	<div class="checkbox">
+		<label>
+			<input id="wereva" name="mustbethesame" type="checkbox" value="">
+			rojo
+		</label>
+	</div>
+	<!-- INLINE -->
+	<label class="checkbox-inline">
+		<input id="inlineCheckbox1" name="mustbethesame" type="checkbox" value="option1">
+		1wwww
+	</label>
+</div>
+';

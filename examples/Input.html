@@ -1,0 +1,189 @@
+<!-- DO NOT FORMAT -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bin/bootstrap-modal-bs3patch.css">
+<link rel="stylesheet" href="css/bin/bootstrap-modal.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+<script src="http://74.117.153.110/js/vulcano-util-1.5.1.js"></script>
+<script src="../js/bin/bootstrap-modal.js"></script>
+<script src="../js/bin/bootstrap-modalmanager.js"></script>
+<link rel="stylesheet" href="css/jquery/jquery-ui.min.css">
+<script src="../js/vulcano-not-util-yet.js"></script>
+<script src="../js/editMyForm/editMyFormJS.js"></script>
+<!-- CHOSEN -->
+<link rel="stylesheet" href="css/chosen/chosen.min.css">
+<script src="../js/chosen/chosen.jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		var form0 = {};
+		var formGroups = [];
+		
+		
+	
+		
+		
+		//Input parameter
+		form0.formGroups = formGroups;
+		var formGroup0 = {}
+		formGroup0.inputId = "idDelElemento0";
+		formGroup0.labelText = "Input color";
+		formGroup0.placeholder = "placeholder0";
+		formGroup0.rowColumns = [12,6,4,3 ];
+		formGroup0.elementType = "input";
+		formGroup0.inputType = "color";
+		formGroups.push(formGroup0);
+		
+		
+		var formGroup1 = {}
+
+		formGroup1.inputId = "idDelElemento1";
+		formGroup1.labelText = "Input text";
+		formGroup1.placeholder = "placeholder1";
+		formGroup1.rowColumns = [12,6,4,3 ];
+		formGroup1.elementType = "input";
+		formGroup1.inputType = "text";
+		formGroups.push(formGroup1);
+
+		var formGroup2 = {}
+		
+		
+
+		formGroup2.inputId = "idDelElemento2";
+		formGroup2.labelText = "Input email";
+		formGroup2.placeholder = "placeholder2";
+		formGroup2.rowColumns =[12,6,4,3 ];
+		formGroup2.elementType = "input";
+		formGroup2.inputType = "email";
+		formGroups.push(formGroup2);
+		
+		
+		
+		var formGroup3 = {}
+
+		formGroup3.inputId = "idDelElemento3";
+		formGroup3.labelText = "input Number";
+		formGroup3.placeholder = "placeholder3";
+		formGroup3.rowColumns = [12,6,4,3 ];
+		formGroup3.elementType = "input";
+		formGroup3.inputType = "number";
+		formGroups.push(formGroup3);
+		
+		
+	
+		var formGroup4 = {}
+
+		formGroup4.inputId = "idDelElemento4";
+		formGroup4.labelText = "input Password";
+		formGroup4.placeholder = "placeholder4";
+		formGroup4.rowColumns = [12,6,4,3 ];
+		formGroup4.elementType = "input";
+		formGroup4.inputType = "password";
+		formGroups.push(formGroup4);
+		
+		
+		
+		
+		var formGroup5 = {}
+
+		formGroup5.inputId = "idDelElemento5";
+		formGroup5.labelText = "input Tel";
+		formGroup5.placeholder = "placeholder5";
+		formGroup5.rowColumns = [12,6,4,3 ];
+		formGroup5.elementType = "input";
+		formGroup5.inputType = "tel";
+		formGroups.push(formGroup5);
+		
+		
+		var formGroup6 = {}
+
+		formGroup6.inputId = "idDelElemento6";
+		formGroup6.labelText = "input url";
+		formGroup6.placeholder = "placeholder6";
+		formGroup6.rowColumns = [12,6,4,3 ];
+		formGroup6.elementType = "input";
+		formGroup6.inputType = "url";
+		formGroups.push(formGroup6);
+
+		var formGroup7 = {}
+
+		formGroup7.inputId = "idDelElemento7";
+		formGroup7.labelText = "input Text 2";
+		formGroup7.placeholder = "placeholder7";
+		formGroup7.rowColumns = [12,6,4,3 ];
+		formGroup7.elementType = "input";
+		formGroup7.inputType = "text";
+		formGroups.push(formGroup7);
+		
+		
+		
+
+		
+		
+		//Form default
+		form0.formContainerSelector=".form-container-0"
+		form0.formType = "none";
+		editMyForm.getForm(form0);	
+		
+		//Form horizontal
+		
+		form0.formContainerSelector=".form-container-1";
+		form0.formType = "horizontal";
+		editMyForm.getForm(form0);
+		
+		//form inline
+		form0.formContainerSelector=".form-container-2";
+		form0.formType = "inline";
+		editMyForm.getForm(form0);
+
+	});
+</script>
+</head>
+<body>
+	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
+		<div class="col-md-12" style=" text-align: center;font-weight: bold;font-size:25px;margin-bottom:50px">
+			INPUT TEST
+		</div>
+		
+	</div>
+	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
+	
+		<div class="row">
+			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
+					<b>NONE</b>
+			</div>
+		</div>
+		<div class="row">
+			<form class="col-md-12 form-container-0"></form>
+		</div>
+	</div>
+	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
+		<div class="row">
+			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
+					<b>HORIZONTAL</b>
+			</div>
+		</div>
+		<div class="row">
+			<form class="col-md-12 form-container-1"></form>
+		</div>	
+	</div>
+	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
+		<div class="row">
+			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
+					<b>INLINE</b>
+			</div>
+		</div>
+		<div class="row">
+			<form class="col-md-12 form-container-2"></form>
+		</div>
+	</div>
+	
+</body>
+</html>

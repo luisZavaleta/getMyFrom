@@ -1,0 +1,346 @@
+<!-- DO NOT FORMAT -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bin/bootstrap-modal-bs3patch.css">
+<link rel="stylesheet" href="css/bin/bootstrap-modal.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+<script src="http://74.117.153.110/js/vulcano-util-1.5.1.js"></script>
+<script src="../js/bin/bootstrap-modal.js"></script>
+<script src="../js/bin/bootstrap-modalmanager.js"></script>
+<link rel="stylesheet" href="css/jquery/jquery-ui.min.css">
+<script src="../js/vulcano-not-util-yet.js"></script>
+<script src="../js/editMyForm/editMyFormJS.js"></script>
+<!-- CHOSEN -->
+<link rel="stylesheet" href="css/chosen/chosen.min.css">
+<script src="../js/chosen/chosen.jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		
+	/*	
+ * @param formGroups[*].checkboxFormType{inline | stacked}: String that defines if groups of
+ *        checkboxes us inline or stacked
+ * @param formGroups[*].checkboxName{String} name of one groups of checkboxes.
+ * @param formGroups[*].checkboxParams[*].id: Single checkbox value.
+ * @param formGroups[*].checkboxParams[*].value: Single Checkbox value.
+ * @param formGroups[*].checkboxParams[*].text: Single Checkbox main text *
+		*/
+		
+		var form0 = {};
+ 		var form1 = {};
+ 
+		var formGroups = [];
+		
+		
+		var elementType = "checkbox"
+	
+		
+		
+		//Input parameter
+		form0.formGroups = formGroups;
+		
+		var formGroup0 = {}
+		var formGroup1 = {}
+		
+		
+		
+		var checkboxParams = []
+		var checkBox1 = {};
+		var checkBox2 = {};
+		var checkBox3 = {};
+		var checkBox4 = {};
+		var checkBox5 = {};
+		
+		
+		
+		
+		/***********************
+		** General attributes **
+		************************/			
+		formGroup0.inputId = "idBox1";
+		formGroup0.labelText = "Check  1";
+		//formGroup0.placeholder = "placeholder0"; //no placegolder needed for 
+		formGroup0.rowColumns = [12,12,6,6 ];
+		
+		//formGroup0.labelStyle = {"color":"red"}
+		//formGroup0.rowColumns = [12,6,4,4 ];
+		//formGroup0.rowColumns = [12 ];
+		
+		formGroup0.elementType = elementType;
+		
+		
+		
+		/**************************
+		** Form Group Attributes **
+		***************************/	
+		formGroup0.checkboxFormType = "inline";
+		formGroup0.checkboxName = "Group0";
+		formGroup0.checkboxParams = checkboxParams;
+		formGroups.push(formGroup0);		
+		
+		
+		
+		/***********************************
+		** Individual checkbox Attributes **
+		************************************/
+		checkBox1.id = "idChBx1"
+		checkBox1.value = "valueO" 
+		checkBox1.text = "&nbsp;"
+		checkboxParams.push(checkBox1);
+		
+		
+		checkBox2.id = "idChBx2"
+		checkBox2.value = "value2" 
+		checkBox2.text = "Disabled"
+		checkBox2.type="disabled"
+		checkboxParams.push(checkBox2);
+				
+			
+		checkBox3.id = "idChBx3"
+		checkBox3.value = "value3" 
+		checkBox3.text = "Selected"
+		checkBox3.type = "selected"
+ 
+		checkboxParams.push(checkBox3);
+		
+		
+
+		
+		
+		
+		
+		
+		
+	
+	
+		
+		
+		/****************************
+		** Changing some params 	**
+		*****************************/
+		
+		
+		var formGroup1 = vulcanoUtil.clone(formGroup0);
+		formGroup1.checkboxName = "grupo1"
+		
+		var formGroup2 = vulcanoUtil.clone(formGroup0);
+		formGroup2.checkboxFormType  = "inline"
+		formGroup2.checkboxName = "grupo2"
+		
+		
+		//no group name
+		//formGroup1.inputId = undefined;
+		formGroups.push(formGroup1);
+		
+		
+		formGroup2.inputId = undefined;
+		formGroups.push(formGroup2);
+		
+		
+		
+	
+		
+		var formGroup3 = vulcanoUtil.clone(formGroup1);
+		formGroup3.checkboxFormType  = "inline"
+		formGroup3.checkboxName = "grupo3"
+		
+		formGroup3.inputId = undefined;
+		formGroups.push(formGroup3);
+		
+	
+		
+		/****************************
+		** General Form Attributes **
+		*****************************/		
+
+		
+		
+		
+		//Form default
+		form0.formContainerSelector=".form-container-0"
+		form0.formType = "none";
+		editMyForm.getForm(form0);	
+		
+		//Form horizontal
+		
+		form0.formContainerSelector=".form-container-1";
+		form0.formType = "horizontal";
+		editMyForm.getForm(form0);
+		
+		//form inline
+		form0.formContainerSelector=".form-container-2";
+		form0.formType = "inline";
+		editMyForm.getForm(form0);
+		
+		
+		
+		
+	/*
+		
+		
+		
+		
+		
+		
+		
+		var formGroup1 = {}
+
+		formGroup1.inputId = "idDelElemento1";
+		formGroup1.labelText = "TextArea 2";
+		formGroup1.placeholder = "placeholder1";
+		formGroup1.rowColumns = [12,6,4,3 ];
+		formGroup1.elementType = elementType;
+		
+		
+		formGroups.push(formGroup1);
+
+		var formGroup2 = {}
+		
+		
+
+		formGroup2.inputId = "idDelElemento2";
+		formGroup2.labelText = "TextArea 3";
+		formGroup2.placeholder = "placeholder2";
+		formGroup2.rowColumns =[12,6,4,3 ];
+		formGroup2.elementType = elementType;
+		
+		
+		formGroups.push(formGroup2);
+		
+		
+		
+		var formGroup3 = {}
+
+		formGroup3.inputId = "idDelElemento3";
+		formGroup3.labelText = "TextArea 4";
+		formGroup3.placeholder = "placeholder3";
+		formGroup3.rowColumns = [12,6,4,3 ];
+		formGroup3.elementType = elementType;
+		
+		
+		formGroups.push(formGroup3);
+		
+		
+	
+		var formGroup4 = {}
+
+		formGroup4.inputId = "idDelElemento4";
+		formGroup4.labelText = "TextArea 5";
+		formGroup4.placeholder = "placeholder4";
+		formGroup4.rowColumns = [12,6,4,3 ];
+		formGroup4.elementType = elementType;
+		
+		
+		formGroups.push(formGroup4);
+		
+		
+		
+		
+		var formGroup5 = {}
+
+		formGroup5.inputId = "idDelElemento5";
+		formGroup5.labelText = "TextArea 1B";
+		formGroup5.placeholder = "placeholder5";
+		formGroup5.rowColumns = [12,6,4,3 ];
+		formGroup5.elementType = elementType;
+		
+		
+		formGroups.push(formGroup5);
+		
+		
+		var formGroup6 = {}
+
+		formGroup6.inputId = "idDelElemento6";
+		formGroup6.labelText ="TextArea 2B";
+		formGroup6.placeholder = "placeholder6";
+		formGroup6.rowColumns = [12,6,4,3 ];
+		formGroup6.elementType = elementType;
+		
+		
+		formGroups.push(formGroup6);
+
+		var formGroup7 = {}
+
+		formGroup7.inputId = "idDelElemento7";
+		formGroup7.labelText = "TextArea 7";
+		formGroup7.placeholder = "placeholder7";
+		formGroup7.rowColumns = [12,6,4,3 ];
+		formGroup7.elementType = elementType;
+		
+		
+		formGroups.push(formGroup7);
+		
+		
+		
+
+		
+		
+		//Form default
+		form0.formContainerSelector=".form-container-0"
+		form0.formType = "none";
+		editMyForm.getForm(form0);	
+		
+		//Form horizontal
+		
+		form0.formContainerSelector=".form-container-1";
+		form0.formType = "horizontal";
+		editMyForm.getForm(form0);
+		
+		//form inline
+		form0.formContainerSelector=".form-container-2";
+		form0.formType = "inline";
+		editMyForm.getForm(form0);
+		
+		*/
+
+	});
+</script>
+</head>
+<body>
+	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
+		<div class="col-md-12" style=" text-align: center;font-weight: bold;font-size:25px;margin-bottom:50px">
+			INPUT TEST
+		</div>
+		
+	</div>
+	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
+	
+		<div class="row">
+			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
+					<b>NONE</b>
+			</div>
+		</div>
+		<div class="row">
+			<form class="col-md-12 form-container-0"></form>
+		</div>
+	</div>
+	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
+		<div class="row">
+			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
+					<b>HORIZONTAL</b>
+			</div>
+		</div>
+		<div class="row">
+			<form class="col-md-12 form-container-1"></form>
+		</div>	
+	</div>
+	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
+		<div class="row">
+			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
+					<b>INLINE</b>
+			</div>
+		</div>
+		<div class="row">
+			<form class="col-md-12 form-container-2"></form>
+		</div>
+	</div>
+	
+</body>
+</html>

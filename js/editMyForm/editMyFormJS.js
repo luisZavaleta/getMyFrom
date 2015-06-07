@@ -7,7 +7,7 @@
  */
 
 
-var debug = true;
+var debug = false;
 var minHtml = '<div style="display: none"><div id="emf-form"><form role="form" class="%formClass%">%emfFormContent%</form></div><div id="emf-formGroup"><div class="form-group %emfFormGroupWidth%">%emfFormGroupLabel% %emfFormGroupInput%</div></div><div id="emf-formLabel"><label style="%emfFormLabelStyle%"  class="%emfFormLabelClass%" for="%emfFormLabelFor%"> %emfFormLabelValue% </label></div><div id="emf-formInput">%emfFormInputBefore%<input type="%emfFormInputType%" style="" class="form-control" id="%emfFormInputId%"placeholder="%emfFormInputPlaceHolder%" />%emfFormInputAfter%</div><div id="emf-formTextarea">%emfFormInputBefore%<textarea type="%emfFormInputType%" style="" rows="%emfFormTextareaRows%" class="form-control" id="%emfFormInputId%"placeholder="%emfFormInputPlaceHolder%"></textarea>%emfFormInputAfter%</div><div id="emf-formCheckbox">%emfFormCheckboxBefore%<label class="%emfFormCheckboxLabelClass%"><input %disabled% id="%emfFormCheckboxId%" name="%emfFormCheckboxName%" type="%checkOrRadioType%"value="%emfFormCheckboxValue%">%emfFormCheckboxText%</label>%emfFormCheckboxAfter%</div><!-- SELECT --><div id="emf-formSelect">%emfFormSelectBefore%<select id="%emfFormSelectId%" data-placeholder="%emfSelectPlaceholder%" >%emfSelectOptions%</select>%emfFormSelectAfter%</div><!-- STACKED --><div class="checkbox"><label><input id="wereva" name="mustbethesame" type="checkbox" value="">rojo</label></div><!-- INLINE --><label class="checkbox-inline"><input id="inlineCheckbox1" name="mustbethesame" type="checkbox" value="option1">1wwww</label></div>';
 var editMyForm = {};
 
@@ -412,6 +412,8 @@ editMyForm.mapInputParams = function(inputParamsElement) {
 	inputParams.inputColumns = inputParamsElement.inputColumns;
 	inputParams.inputType = inputParamsElement.inputType;
 	inputParams.textareaRows = inputParamsElement.textareaRows;
+	
+	
 	// inputParams.elementType = inputParamsElement.elementType;
 	
 	
@@ -602,7 +604,10 @@ editMyForm.getFormGroupInputElement = function(formTypeInt, inputElementParams, 
 
 
 
-
+if(debug){
+	console.log("PRE PRE");
+	console.log(inputElementParams);
+}
 
 	var elementType = -1;
 	
@@ -611,8 +616,7 @@ editMyForm.getFormGroupInputElement = function(formTypeInt, inputElementParams, 
 	switch (inputElementParams.elementType) {
 
 		case "textarea":// done
-			htmlFormGroup =  editMyForm.getFormGroupInputOrTextArea(formTypeInt, editMyForm.ELEMENT_TYPE_TEXTAREA, editMyForm
-					.mapInputParams(inputElementParams));
+			htmlFormGroup =  editMyForm.getFormGroupInputOrTextArea(formTypeInt, editMyForm.ELEMENT_TYPE_TEXTAREA,inputElementParams);
 			break;
 		case "checkbox":// done
 			elementType = editMyForm.ELEMENT_TYPE_CHECKBOX;
@@ -628,12 +632,11 @@ editMyForm.getFormGroupInputElement = function(formTypeInt, inputElementParams, 
 		case "select":
 
 		
-			htmlFormGroup = editMyForm.getFormGroupSelect(formTypeInt, editMyForm.mapSelectParams(inputElementParams), containerSelector);
+			htmlFormGroup = editMyForm.getFormGroupSelect(formTypeInt, inputElementParams, containerSelector);
 			break;
 		case "input":// done
 		default:
-			htmlFormGroup =  editMyForm.getFormGroupInputOrTextArea(formTypeInt, editMyForm.ELEMENT_TYPE_INPUT, editMyForm
-					.mapInputParams(inputElementParams));
+			htmlFormGroup =  editMyForm.getFormGroupInputOrTextArea(formTypeInt, editMyForm.ELEMENT_TYPE_INPUT, inputElementParams);
 			break;
 
 	}
@@ -854,7 +857,11 @@ editMyForm.getFormSingleCheckboxOrRadio = function(elementType, checkboxFormType
  */
 
 editMyForm.getFormGroupSelect = function(formTypeInt, selectParams, containerSelector) {
-
+	if(debug){
+		console.log("CHOSEN ONE PRE");
+		console.log(selectParams);
+	}
+	
 
 
 	var htmlTemplateSelect = $("#emf-formSelect").html();
@@ -864,9 +871,11 @@ editMyForm.getFormGroupSelect = function(formTypeInt, selectParams, containerSel
 		selectParams.placeholder = "";
 	}
 	
+	
+	alert(selectParams.inputId);
 
 	htmlTemplateSelect = vulcanoUtil.template(htmlTemplateSelect, {
-		emfFormSelectId : selectParams.id,
+		emfFormSelectId : selectParams.inputId,
 		emfSelectPlaceholder : selectParams.placeholder,
 		// emfSelectClass : selectParams.selectClass,
 		emfSelectOptions : editMyForm.getFormGroupSelectOptions(selectParams.options, selectParams.optgroups),
@@ -876,7 +885,7 @@ editMyForm.getFormGroupSelect = function(formTypeInt, selectParams, containerSel
 
 	
 	
-	
+	/*
 	if(vulcanoUtil.undefinedOrFalse(selectParams.style)){
 		selectParams.style = {"width": "100%"};
 	}else{
@@ -885,46 +894,67 @@ editMyForm.getFormGroupSelect = function(formTypeInt, selectParams, containerSel
 		}
 	}
 	
+	*/
 	
 	
 	
 	
-	
-	
+	//
 	
 
 	$(containerSelector).on("editMyForm.formCreated", function() {
 		
-		var selectElement = $(containerSelector + " #"+selectParams.id);
+		var selectElement = $(containerSelector + " #"+selectParams.inputId);
 		
-		selectElement.attr("style", JSON.toCssStringNew(selectParams.style));
+		selectElement.attr("style", "width:100%");
 		
 		
 		
 		if(!!selectParams.rightAling){
-			
 			selectElement.addClass("chosen-rtl");
-			
-			
-			
-			
 		}
 	
 		if (!!selectParams.multiple) {
 			console.log($(htmlTemplateSelect));
-			$("#" + selectParams.id).attr("multiple", 'true');
+			$("#" + selectParams.inputId).attr("multiple", 'true');
 		}
 		
-		console.log(JSON.stringify(selectParams.chosenOptions, "---", 2));
+		if(debug){		
+			console.log("CHOSEN ONE");
+			console.log(selectParams);
+			console.log(JSON.stringify(selectParams.chosenOptions, "---", 2));		
+		}
 		
-		if(!selectParams.chosenOption){		
+		if(!!selectParams.chosenOption){		
 			selectParams.chosenOptions = {};
 		}
 		
-		console.log(JSON.stringify(selectParams.chosenOptions, "---", 2));
 		
-		$("#"+selectParams.id).chosen(selectParams.chosenOptions);
+		
+		
+		//
+		
+		if(debug){		
+			console.log(JSON.stringify(selectParams.chosenOptions, "---", 2));
+			console.log("Chossen option begin");
+		
+			console.log(JSON.stringify(selectParams.style));
+			
+			console.log("Chossen option end");
+		}
+		
+		console.log("this   vvvvvvvv");
+		console.log("#"+selectParams.inputId);
+		$("#"+selectParams.inputId).chosen(selectParams.chosenOptions);
 
+		if(!!selectParams.style){		
+			
+			var actualStyle = $("#" + selectParams.inputId + "_chosen").attr("style"); + ";"
+			
+			$("#" + selectParams.inputId + "_chosen").attr("style",  actualStyle + JSON.toCssStringNew(selectParams.style));
+			selectParams.chosenOptions = {};
+		}
+		
 	});
 
 	return htmlTemplateSelect;
@@ -1021,13 +1051,17 @@ editMyForm.getSimpleOption = function(value, text, type) {
  */
 
 editMyForm.getOptGroup = function(label, options) {
+	
+	console.log("options     vvvvv");
+	console.log(JSON.stringify(options));
 
-	var htmlOptGroup = '<optgroup label="NFC EAST">';
+	var htmlOptGroup = '<optgroup label="'+label+'">';
 
 	$.each(options, function(index, value) {
-
-
-		htmlOptGroup += editMyForm.getSimpleOption(value.value, value.text, value.type);
+		
+		if(value.value != null){
+			htmlOptGroup += editMyForm.getSimpleOption(value.value, value.text, value.type);
+		}
 	});
 
 	htmlOptGroup += '</optgroup>';

@@ -35,27 +35,25 @@
 		formGroup0 = {};
 		formGroups.push(formGroup0);
 	
-		formGroup0.rowColumns = [12,6,4,3 ];
+		formGroup0.rowColumns = [12,6,4,3 ]; //ok
 		
 		
 		//Label Data
 		
-		formGroup0.labelText = "Select 1";
+		formGroup0.labelText = "Hola mundo";
 		formGroup0.labelColumns = [4];
 		
 		//General input data
-		formGroup0.inputId = "select1ID";
-		formGroup0.inputColumns = [8];
+		formGroup0.inputId = "select1IDx";
+		formGroup0.inputColumns = [12];
 		formGroup0.elementType = "select";
-		formGroup0.style= {"color" : "red"}
-	
-		
+		//formGroup0.style= {"font-size" : "30px !important"}	 //Be careful!!  many styles are overrided by chosen, so this mignt not work as expected.
 		
 		
 		//Select specific params
-		formGroup0.multiple = "true";
-		formGroup0.rightAling = true;
-		formGroup0.chosenOptions = {width: "50%"}
+		formGroup0.multiple = true; //ok, false is null or boolean false, true otherwise incliding string false
+		//formGroup0.rightAling = true;//buggy, do not use it, Will be fixed in next version.
+		formGroup0.chosenOptions = {"max_selected_options": 3} //ok, it is working, you can use any chosen option here
 		
 		selectOptions = []
 		
@@ -71,27 +69,86 @@
 		
 
 		formGroup0.options = selectOptions;
+		console.log("NANANANANANANANANANANANANANA")
+		var form1 = vulcanoUtil.clone(form0);
 		
-		
+		console.log(JSON.stringify(form0))
+		console.log("BATMAAAAAAAAAAAAAAAAAAAAAAAN")
 	
 		editMyForm.getForm(form0);	
 
 	
 		
 		
-		/*
 		
-		formGroups.
-		formGroups.
-		formGroups.
-		formGroups.
-		formGroups.
-		formGroups.
-		formGroups.
-		formGroups.
-		formGroups.
-		*/
 		
+	
+		form1.formContainerSelector = 	".form-container-0-a";
+		form1.formGroups[0].inputId = "holaMundo";
+		
+		var optionsX = vulcanoUtil.clone(form1.formGroups[0].options);
+		delete(form1.formGroups[0].options)
+		
+		
+		var optGropups = []
+		form1.formGroups[0].optgroups = optGropups
+		
+		
+		var optGroup0 = {}
+		optGroup0.label = "PRUEBA";
+		optGroup0.options = optionsX;
+		
+		var optGroup1 = {}
+		optGroup1.label = "HOLA MUNDO";
+		optGroup1.options = optionsX;
+		
+		
+		optGropups.push(optGroup0);
+		optGropups.push(optGroup1);
+		
+		
+		console.log("NANANANANANANANANANANANANANA")
+		console.log(JSON.stringify(form1))
+		console.log("BATMAAAAAAAAAAAAAAAAAAAAAAAN")
+	
+		editMyForm.getForm(form1);	
+		
+		
+	
+		
+	 	/* @param formGroups[*].multiple{Boolean} Indicates if multiple selection is permited. 				//ok
+		 * @param formGroups[*].options{Array} Specify the different options in this select.				//ok
+		 * @param formGroups[*].options.value{String} Value that will be set when the option is				//ok
+		 *        selected, default text value
+		 * @param formGroups[*].options.text{String} Text that will be Displayed in the select option,		//ok
+		 *        it is also used as value if a value is not pressent.
+		 * @param formGroups[*].options.type{selected || disabled} Extra information about the select		//ok
+		 *        option.
+		 * @param formGroups[*].optgroups{Array} Specify the different optgroups in this select. 			//ok
+		 * @param formGroups[*].optgroups.label{String} Specifies a label for an option-group.				//ok
+		 * @param formGroups[*].optgroups.options{Array} Specify the different options in this				//ok
+		 *        optgroup. 
+		 * @param formGroups[*].optgroups.options.value.													//ok
+		 * @param formGroups[*].optgroups.options.text.														//ok
+		 * @param formGroups[*].optgroups.options.type.														//ok
+
+		 
+		 
+		 * @param formGroups[*].optgroups.options.value{String} Value that will be set when the option
+		 *        formGroups[*], default text value
+		 * @param formGroups[*].optgroups.options.text{String} Text that will be Displayed in the
+		 *        select option, it is also used as value if a value is not pressent.
+		 * @param formGroups[*].optgroups.options.type{selected || disabled} Extra information about
+		 *        the select option.
+		 *        
+		 *         ================ NEW SELECT PARAMS , NOT IMPLEMENTED YET===================
+		      
+		 * @params formGroups[*].chosenOption{Array}: ninamically add options when calling chosen 
+		 * 				e.g:  $(".chosen-select").chosen({width: "95%"});
+		 * 
+		 * @params formGroups[*].style{JSON} 
+		 * @params formGroups[*].rightAling{Boolean}
+		 */ 
 		
 		
 	
@@ -114,15 +171,21 @@
 	</div>
 	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
 	
-		<div class="row">
-			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
-					<b>NONE</b>
-			</div>
-		</div>
+
+		
 		<div class="row">
 			<form class="col-md-12 form-container-0"></form>
 		</div>
+		
+		<div class="row">
+			<form class="col-md-12 form-container-0-a"></form>
+		</div>
+		
+		
+		
 	</div>
+	
+	<!-- 
 	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
 		<div class="row">
 			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
@@ -143,7 +206,7 @@
 			<form class="col-md-12 form-container-2"></form>
 		</div>
 	</div>
-	
+	 -->
 </body>
 </html>
 
@@ -180,3 +243,5 @@
  * @params formGroups[*].rightAling{Boolean}
  */
   -->
+  
+  

@@ -6,15 +6,22 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- 
 <link rel="stylesheet" href="css/bin/bootstrap-modal-bs3patch.css">
 <link rel="stylesheet" href="css/bin/bootstrap-modal.css">
+
+ -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
 <script src="http://74.117.153.110/js/vulcano-util-1.5.1.js"></script>
 <script src="../js/bin/bootstrap-modal.js"></script>
 <script src="../js/bin/bootstrap-modalmanager.js"></script>
+<!--  
 <link rel="stylesheet" href="css/jquery/jquery-ui.min.css">
+-->
+
 <script src="../js/vulcano-not-util-yet.js"></script>
 <script src="../js/editMyForm/editMyFormJS.js"></script>
 <!-- CHOSEN -->
@@ -25,93 +32,232 @@
 
 		var form0 = {};
 		
-		//Form data
+		
+		
+		/***************************
+		**  OPTIONS FOR TESTING   **
+		****************************/
+		
+		
+		
+		
+		//formGroups[*].options.value{String}
+		//formGroups[*].options.text{String} 
+		//formGroups[*].options.type
+		
+		options0 = []
+		options0.push({"value":"","text":""})
+		options0.push({"value":"1","text":" uno"})
+		options0.push({"value":"2","text":" dos", "type" : "disabled"})
+		options0.push({"value":"3","text":" tres", "type" : "selected"})
+		options0.push({"value":"4","text":" cuatro"})
+		options0.push({"value":"5","text":" cinco"})
+		options0.push({"value":"6","text":" seis"})
+		
+		
+		options1 = []		
+		options1.push({"value":"","text":""})
+		options1.push({"value":"1d","text":" ein"})
+		options1.push({"value":"2d","text":" zwei"})
+		options1.push({"value":"3d","text":" drei"})
+		options1.push({"value":"4d","text":" vier"})
+		options1.push({"value":"5d","text":" fünf"})
+		options1.push({"value":"6d","text":" sechs", "type" : "disabled"})
+		options1.push({"value":"7d","text":" sieben"})
+		
+
+		options2 = []		
+		options2.push({"value":"","text":""})
+		options2.push({"value":"1e","text":" one"})
+		options2.push({"value":"2e","text":" two"})
+		options2.push({"value":"3e","text":" three"})
+		options2.push({"value":"4e","text":" four"})
+		options2.push({"value":"5e","text":" five", "type" : "disabled"})
+		options2.push({"value":"6e","text":" six"})
+		options2.push({"value":"7e","text":" seven"})
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/***************************
+		** COMMON FORM PARAMETERS **
+		****************************/
+		//formType{none | horizontal | inline} 
 		form0.formType = 				"none";
+		
+		//formContainerSelector{String} 
 		form0.formContainerSelector = 	".form-container-0";
 		
 		var formGroups = [];
+		
+		//formGroups{Array} 
 		form0.formGroups = formGroups;
 		
 		formGroup0 = {};
+		formGroup1 = {};
+		formGroup2 = {};
+		formGroup3 = {};
+		
 		formGroups.push(formGroup0);
+		formGroups.push(formGroup1);
+		formGroups.push(formGroup2);
+		formGroups.push(formGroup3);
+		
+		//formGroups[*].rowColumns{Array}
+		formGroup0.rowColumns = [12,6 ]; //ok
+		formGroup1.rowColumns = [12,6 ]; 
+		formGroup2.rowColumns = [12,6 ]; 
+		formGroup3.rowColumns = [12,6 ];
+		
+		
+		
+		
+		/***************************
+		** COMMON LABEL PARAMETERS **
+		****************************/		
+		
+		//formGroups[*].labelText{String}
+		formGroup0.labelText = "Select Uno";
+		formGroup1.labelText = "Select Dos";
+		formGroup2.labelText = "Select Tres";
+		formGroup3.labelText = "Select Cuatro";
+		
+		//formGroups[*].labelColumns{Array} 
+		//formGroup0.labelColumns = [4];  // no neded for none formtype
 	
-		formGroup0.rowColumns = [12,6,4,3 ]; //ok
+		
+		/***************************
+		** COMMON INPUT PARAMETERS **
+		****************************/		
+		
+		//formGroups[*].inputId{String}
+		formGroup0.inputId = "select1";
+		formGroup1.inputId = "select2";
+		formGroup2.inputId = "select3";
+		formGroup3.inputId = "select4";
 		
 		
-		//Label Data
+		//formGroups[*].inputColumns{Array} 
+		//formGroup0.inputColumns = [12]; 	// no Needed for non formtype
 		
-		formGroup0.labelText = "Hola mundo";
-		formGroup0.labelColumns = [4];
-		
-		//General input data
-		formGroup0.inputId = "select1IDx";
-		formGroup0.inputColumns = [12];
+		//formGroups[*].elementType
 		formGroup0.elementType = "select";
+		formGroup1.elementType = "select";
+		formGroup2.elementType = "select";
+		formGroup3.elementType = "select";
+		
+		
+		
+		
+		/****************************
+		**    SELECT ONLY PARAMS   **
+		*****************************/		
+		
+		// formGroups[*].style{JSON} 
 		//formGroup0.style= {"font-size" : "30px !important"}	 //Be careful!!  many styles are overrided by chosen, so this mignt not work as expected.
 		
 		
-		//Select specific params
-		formGroup0.multiple = true; //ok, false is null or boolean false, true otherwise incliding string false
-		//formGroup0.rightAling = true;//buggy, do not use it, Will be fixed in next version.
-		formGroup0.chosenOptions = {"max_selected_options": 3} //ok, it is working, you can use any chosen option here
+		//formGroups[*].multiple{Boolean} 
+		formGroup0.multiple = false; //ok, false is null or boolean false, true otherwise incliding string false
+		formGroup1.multiple = false;
+		formGroup2.multiple = false;
+		formGroup3.multiple = false;
 		
-		selectOptions = []
+		//formGroup0.rightAling = true;//buggy, do not use it, Will be fixed in next version.		
 		
-		
-		//Options specific params
-		selectOptions.push({"value":"value1","text":" text uno"})
-		selectOptions.push({"value":"value2","text":" text dos", "type" : "disabled"})
-		selectOptions.push({"value":"value3","text":" text tre"})
-		selectOptions.push({"value":"value4","text":" text cua"})
-		selectOptions.push({"value":"value5","text":" text cin"})
-		selectOptions.push({"value":"value6","text":" text sei"})
-		selectOptions.push({"value":"value7","text":" text sie"})
+		//formGroups[*].chosenOption{Array}:
+		formGroup0.chosenOptions = {"allow_single_deselect": true} //allow_single_deselect: close (deselect) button at one side of the select
+		formGroup1.chosenOptions = {"allow_single_deselect": true}
+		formGroup2.chosenOptions = {"allow_single_deselect": true}
+		formGroup3.chosenOptions = {"allow_single_deselect": true}
 		
 
-		formGroup0.options = selectOptions;
-		console.log("NANANANANANANANANANANANANANA")
-		var form1 = vulcanoUtil.clone(form0);
+		
+		var optGropups0 = []
+		var optGropups1 = []
+		var optGropups2 = []
+		var optGropups3 = []
+		//formGroups[*].optgroups{Array} 
+		formGroup0.optgroups = optGropups0	 
+		formGroup1.optgroups = optGropups1	
+		formGroup2.optgroups = optGropups2	
+		formGroup3.optgroups = optGropups3	
+		
+		var optGroup00 = {}
+		var optGroup01 = {}
+		var optGroup02 = {}
+		var optGroup03 = {}
+		
+		//formGroups[*].optgroups.label{String}
+		optGroup00.label = "ESPAÑOL";
+		optGroup00.options = options0;
+		
+		optGroup01.label = "ESPAÑOL";
+		optGroup01.options = options0;
+		
+		optGroup02.label = "ESPAÑOL";
+		optGroup02.options = options0;
+		
+		optGroup03.label = "ESPAÑOL";
+		optGroup03.options = options0;
+		
+		
+		var optGroup10 = {}
+		var optGroup11 = {}
+		var optGroup12 = {}
+		var optGroup13 = {}
+		
+		optGroup10.label = "DEUTSCH";
+		optGroup10.options = options1;	
+		
+		optGroup11.label = "DEUTSCH";
+		optGroup11.options = options1;
+		
+		optGroup12.label = "DEUTSCH";
+		optGroup12.options = options1;
+		
+		optGroup12.label = "DEUTSCH";
+		optGroup12.options = options1;
+		
+		
+		
+		var optGroup20 = {}
+		optGroup20.label = "ENGLISH";
+		optGroup20.options = options2;
+
+
+		
+		
+		optGropups0.push(optGroup00);
+		optGropups0.push(optGroup10);
+		optGropups0.push(optGroup20);
+		
+		optGropups1.push(optGroup01);
+		optGropups1.push(optGroup11);
+			
+		optGropups2.push(optGroup02);
+		optGropups2.push(optGroup12);		
+		
+		optGropups3.push(optGroup03);
+	//	optGropups3.push(optGroup13);
+
+		
+
 		
 		console.log(JSON.stringify(form0))
-		console.log("BATMAAAAAAAAAAAAAAAAAAAAAAAN")
+		
+		
+		editMyForm.getForm(form0);
 	
-		editMyForm.getForm(form0);	
-
 	
-		
-		
-		
-		
-	
-		form1.formContainerSelector = 	".form-container-0-a";
-		form1.formGroups[0].inputId = "holaMundo";
-		
-		var optionsX = vulcanoUtil.clone(form1.formGroups[0].options);
-		delete(form1.formGroups[0].options)
-		
-		
-		var optGropups = []
-		form1.formGroups[0].optgroups = optGropups
-		
-		
-		var optGroup0 = {}
-		optGroup0.label = "PRUEBA";
-		optGroup0.options = optionsX;
-		
-		var optGroup1 = {}
-		optGroup1.label = "HOLA MUNDO";
-		optGroup1.options = optionsX;
-		
-		
-		optGropups.push(optGroup0);
-		optGropups.push(optGroup1);
-		
-		
-		console.log("NANANANANANANANANANANANANANA")
-		console.log(JSON.stringify(form1))
-		console.log("BATMAAAAAAAAAAAAAAAAAAAAAAAN")
-	
-		editMyForm.getForm(form1);	
 		
 		
 	
@@ -127,27 +273,20 @@
 		 * @param formGroups[*].optgroups{Array} Specify the different optgroups in this select. 			//ok
 		 * @param formGroups[*].optgroups.label{String} Specifies a label for an option-group.				//ok
 		 * @param formGroups[*].optgroups.options{Array} Specify the different options in this				//ok
-		 *        optgroup. 
-		 * @param formGroups[*].optgroups.options.value.													//ok
-		 * @param formGroups[*].optgroups.options.text.														//ok
-		 * @param formGroups[*].optgroups.options.type.														//ok
-
-		 
-		 
-		 * @param formGroups[*].optgroups.options.value{String} Value that will be set when the option
+		 *        optgroup. 		 
+		 * @param formGroups[*].optgroups.options.value{String} Value that will be set when the option		//ok
 		 *        formGroups[*], default text value
-		 * @param formGroups[*].optgroups.options.text{String} Text that will be Displayed in the
+		 * @param formGroups[*].optgroups.options.text{String} Text that will be Displayed in the			//ok
 		 *        select option, it is also used as value if a value is not pressent.
-		 * @param formGroups[*].optgroups.options.type{selected || disabled} Extra information about
+		 * @param formGroups[*].optgroups.options.type{selected || disabled} Extra information about		//ok
 		 *        the select option.
 		 *        
 		 *         ================ NEW SELECT PARAMS , NOT IMPLEMENTED YET===================
 		      
-		 * @params formGroups[*].chosenOption{Array}: ninamically add options when calling chosen 
-		 * 				e.g:  $(".chosen-select").chosen({width: "95%"});
-		 * 
-		 * @params formGroups[*].style{JSON} 
-		 * @params formGroups[*].rightAling{Boolean}
+		 * @params formGroups[*].chosenOptions{Array}: We pass this parameter to chosen when it is 			//ok
+		 *											called, e.g.: "chosen(formGroups[*].chosenOptions)"  
+		 * @params formGroups[*].style{JSON} 																//ok, might not work as expected
+		 * @params formGroups[*].rightAling{Boolean}														//ok, buggy
 		 */ 
 		
 		
@@ -165,27 +304,21 @@
 <body>
 	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
 		<div class="col-md-12" style=" text-align: center;font-weight: bold;font-size:25px;margin-bottom:50px">
-			INPUT TEST
+			SELECT
 		</div>
 		
 	</div>
 	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
 	
-
-		
+		<div class="row">
+			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
+					<b>NONE</b>
+			</div>
+		</div>
 		<div class="row">
 			<form class="col-md-12 form-container-0"></form>
 		</div>
-		
-		<div class="row">
-			<form class="col-md-12 form-container-0-a"></form>
-		</div>
-		
-		
-		
 	</div>
-	
-	<!-- 
 	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
 		<div class="row">
 			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
@@ -206,42 +339,10 @@
 			<form class="col-md-12 form-container-2"></form>
 		</div>
 	</div>
-	 -->
+	
 </body>
 </html>
 
-<!-- 
- * 
- *        ============================ SELECT ONLY PARAMS======================
- * @param formGroups[*].multiple{Boolean} Indicates if multiple selection is permited.
- * @param formGroups[*].options{Array} Specify the different options in this select.
- * @param formGroups[*].options.value{String} Value that will be set when the option is
- *        selected, default text value
- * @param formGroups[*].options.text{String} Text that will be Displayed in the select option,
- *        it is also used as value if a value is not pressent.
- * @param formGroups[*].options.type{selected || disabled} Extra information about the select
- *        option.
- * @param formGroups[*].optgroups{Array} Specify the different optgroups in this select.
- * @param formGroups[*].optgroups.label{String} Specifies a label for an option-group.
- * @param formGroups[*].optgroups.options{Array} Specify the different options in this
- *        optgroup. firstOptgroup.label{String} Specifies a label for an option-group.
- *        firstOptgroup.disable{Boolean} firstOptgroup.options{selected || disabled} Extra
- *        information about the select option.
- * @param formGroups[*].optgroups.options.value{String} Value that will be set when the option
- *        formGroups[*], default text value
- * @param formGroups[*].optgroups.options.text{String} Text that will be Displayed in the
- *        select option, it is also used as value if a value is not pressent.
- * @param formGroups[*].optgroups.options.type{selected || disabled} Extra information about
- *        the select option.
- *        
- *         ================ NEW SELECT PARAMS , NOT IMPLEMENTED YET===================
-      
- * @params formGroups[*].chosenOption{Array}: ninamically add options when calling chosen 
- * 				e.g:  $(".chosen-select").chosen({width: "95%"});
- * 
- * @params formGroups[*].style{JSON} 
- * @params formGroups[*].rightAling{Boolean}
- */
-  -->
+
   
   

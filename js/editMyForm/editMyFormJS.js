@@ -153,9 +153,7 @@ checkOrRadioType[editMyForm.ELEMENT_TYPE_RADIOBUTTON] = 'radio';
  *        select option, it is also used as value if a value is not pressent.
  * @param formGroups[*].optgroups.options.type{selected || disabled} Extra information about
  *        the select option.
- *        
- *         ================ NEW SELECT PARAMS , NOT IMPLEMENTED YET===================
-      
+ *     
  * @params formGroups[*].chosenOption{Array}: ninamically add options when calling chosen 
  * 				e.g:  $(".chosen-select").chosen({width: "95%"});
  * 
@@ -872,7 +870,6 @@ editMyForm.getFormGroupSelect = function(formTypeInt, selectParams, containerSel
 	}
 	
 	
-	alert(selectParams.inputId);
 
 	htmlTemplateSelect = vulcanoUtil.template(htmlTemplateSelect, {
 		emfFormSelectId : selectParams.inputId,
@@ -949,7 +946,7 @@ editMyForm.getFormGroupSelect = function(formTypeInt, selectParams, containerSel
 
 		if(!!selectParams.style){		
 			
-			var actualStyle = $("#" + selectParams.inputId + "_chosen").attr("style"); + ";"
+			var actualStyle = $("#" + selectParams.inputId + "_chosen").attr("style"); + ";";
 			
 			$("#" + selectParams.inputId + "_chosen").attr("style",  actualStyle + JSON.toCssStringNew(selectParams.style));
 			selectParams.chosenOptions = {};

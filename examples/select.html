@@ -7,20 +7,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-<!-- 
-<link rel="stylesheet" href="css/bin/bootstrap-modal-bs3patch.css">
-<link rel="stylesheet" href="css/bin/bootstrap-modal.css">
-
- -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
 <script src="http://74.117.153.110/js/vulcano-util-1.5.1.js"></script>
 <script src="../js/bin/bootstrap-modal.js"></script>
 <script src="../js/bin/bootstrap-modalmanager.js"></script>
-<!--  
-<link rel="stylesheet" href="css/jquery/jquery-ui.min.css">
--->
 
 <script src="../js/vulcano-not-util-yet.js"></script>
 <script src="../js/editMyForm/editMyFormJS.js"></script>
@@ -34,17 +26,10 @@
 		var form1 = {};
 		var form2 = {};
 
-		
-		
-		
-		
 		/***************************
 		**  OPTIONS FOR TESTING   **
 		****************************/
-		
-		
-		
-		
+
 		//formGroups[*].options.value{String}
 		//formGroups[*].options.text{String} 
 		//formGroups[*].options.type
@@ -57,8 +42,7 @@
 		options0.push({"value":"4","text":" cuatro ipsum"})
 		options0.push({"value":"5","text":" cinco siet"})
 		options0.push({"value":"6","text":" seis amet"})
-		
-		
+				
 		options1 = []		
 		options1.push({"value":"","text":""})
 		options1.push({"value":"1d","text":" ein"})
@@ -69,7 +53,6 @@
 		options1.push({"value":"6d","text":" sechs", "type" : "disabled"})
 		options1.push({"value":"7d","text":" sieben"})
 		
-
 		options2 = []		
 		options2.push({"value":"","text":""})
 		options2.push({"value":"1e","text":" one"})
@@ -80,12 +63,6 @@
 		options2.push({"value":"6e","text":" six"})
 		options2.push({"value":"7e","text":" seven"})
 
-
-		
-		
-		
-		
-		
 
 		
 		/***************************
@@ -117,9 +94,7 @@
 		formGroup1.rowColumns = [12,6 ]; 
 		formGroup2.rowColumns = [12,6 ]; 
 		formGroup3.rowColumns = [12,6 ];
-		
-		
-		
+
 		
 		/***************************
 		** COMMON LABEL PARAMETERS **
@@ -303,7 +278,10 @@
 		formGroup3.labelText = "Multiple, enable_split_word_search";
 		
 		//formGroups[*].labelColumns{Array} 
-		//formGroup0.labelColumns = [4];  // no neded for none formtype
+		formGroup0.labelColumns = [6];  
+		formGroup1.labelColumns = [6];  
+		formGroup2.labelColumns = [6];  
+		formGroup3.labelColumns = [6];  
 	
 		
 		/***************************
@@ -318,7 +296,10 @@
 		
 		
 		//formGroups[*].inputColumns{Array} 
-		//formGroup0.inputColumns = [12]; 	// no Needed for non formtype
+		formGroup0.inputColumns = [6]; 	
+		formGroup1.inputColumns = [6];  
+		formGroup2.inputColumns = [6];  
+		formGroup3.inputColumns = [6];  
 		
 		//formGroups[*].elementType
 		formGroup0.elementType = "select";
@@ -334,8 +315,7 @@
 		*****************************/		
 		
 		// formGroups[*].style{JSON} 
-		//formGroup0.style= {"font-size" : "30px !important"}	 //Be careful!!  many styles are overrided by chosen, so this mignt not work as expected.
-		
+		//formGroup0.style= {"font-size" : "30px !important"}	 //Be careful!!  many styles are overrided by chosen, so this mignt not work as expected.		
 		
 		//formGroups[*].multiple{Boolean} 
 		formGroup0.multiple = false; //ok, false is null or boolean false, true otherwise incliding string false
@@ -351,12 +331,12 @@
 		formGroup2.chosenOptions = {"disable_search_threshold": 50}
 		formGroup3.chosenOptions = {"enable_split_word_search": false}
 		
-
 		
 		var optGropups0 = []
 		var optGropups1 = []
 		var optGropups2 = []
 		var optGropups3 = []
+		
 		//formGroups[*].optgroups{Array} 
 		formGroup0.optgroups = optGropups0	 
 		formGroup1.optgroups = optGropups1	
@@ -366,7 +346,6 @@
 		var optGroup00 = {}
 		var optGroup01 = {}
 		var optGroup02 = {}
-	//	var optGroup03 = {}
 		
 		//formGroups[*].optgroups.label{String}
 		optGroup00.label = "ESPAÑOL";
@@ -377,9 +356,7 @@
 		
 		optGroup02.label = "ESPAÑOL";
 		optGroup02.options = options0;
-		
-//		optGroup03.label = "ESPAÑOL";
-//		optGroup03.options = options0;
+
 		
 		
 		var optGroup10 = {}
@@ -396,17 +373,11 @@
 		optGroup12.label = "DEUTSCH";
 		optGroup12.options = options1;
 		
-//		optGroup13.label = "DEUTSCH";
-//		optGroup13.options = options1;
-		
 		
 		
 		var optGroup20 = {}
 		optGroup20.label = "ENGLISH";
 		optGroup20.options = options2;
-
-
-		
 		
 		optGropups0.push(optGroup00);
 		optGropups0.push(optGroup10);
@@ -592,37 +563,7 @@
 		editMyForm.getForm(form0);
 		
 		
-	
 
-		/*
-		
-		
-		
-		
-		formGroup0.rowColumns = [10]; 
-		formGroup1.rowColumns = [10]; 
-		formGroup2.rowColumns = [10]; 
-		formGroup3.rowColumns = [10];
-		
-		
-		
-		formGroup0.labelColumns = [3];  // no neded for none formtype
-		formGroup0.inputColumns = [3]; 	// no Needed for non formtype
-
-	
-		console.log(JSON.stringify(form1))
-		
-		editMyForm.getForm(form1);
-		
-		*/
-		
-		
-		
-		
-		
-		//editMyForm.getForm(form2);
-		
-	
 	
 		
 		
@@ -677,7 +618,7 @@
 	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
 	
 		<div class="row">
-			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
+			<div class="class="col-md-12 container-fluid" style="text-align:center; margin-bottom:15px;">
 					<b>NONE</b>
 			</div>
 		</div>

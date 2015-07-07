@@ -31,6 +31,10 @@
 	$(document).ready(function() {
 
 		var form0 = {};
+		var form1 = {};
+		var form2 = {};
+
+		
 		
 		
 		
@@ -47,12 +51,12 @@
 		
 		options0 = []
 		options0.push({"value":"","text":""})
-		options0.push({"value":"1","text":" uno"})
-		options0.push({"value":"2","text":" dos", "type" : "disabled"})
-		options0.push({"value":"3","text":" tres", "type" : "selected"})
-		options0.push({"value":"4","text":" cuatro"})
-		options0.push({"value":"5","text":" cinco"})
-		options0.push({"value":"6","text":" seis"})
+		options0.push({"value":"1","text":" uno hola"})
+		options0.push({"value":"2","text":" dos mundo", "type" : "disabled"})
+		options0.push({"value":"3","text":" tres lorem", "type" : "selected"})
+		options0.push({"value":"4","text":" cuatro ipsum"})
+		options0.push({"value":"5","text":" cinco siet"})
+		options0.push({"value":"6","text":" seis amet"})
 		
 		
 		options1 = []		
@@ -82,10 +86,7 @@
 		
 		
 		
-		
-		
-		
-		
+
 		
 		/***************************
 		** COMMON FORM PARAMETERS **
@@ -123,12 +124,183 @@
 		/***************************
 		** COMMON LABEL PARAMETERS **
 		****************************/		
+	
+		//formGroups[*].labelText{String}
+		formGroup0.labelText = "Single, Optgrup, allow_single_deselect";
+		formGroup1.labelText = "Single, Optgrup, disable_search";
+		formGroup2.labelText = "Single, Optgrup, disable_search_threshold:50";
+		formGroup3.labelText = "Multiple, enable_split_word_search";
+		
+		//formGroups[*].labelColumns{Array} 
+		//formGroup0.labelColumns = [4];  // no neded for none formtype
+	
+		
+		/***************************
+		** COMMON INPUT PARAMETERS **
+		****************************/		
+		
+		//formGroups[*].inputId{String}
+		formGroup0.inputId = "select1";
+		formGroup1.inputId = "select2";
+		formGroup2.inputId = "select3";
+		formGroup3.inputId = "select4"; //a
+		
+		
+		//formGroups[*].inputColumns{Array} 
+		//formGroup0.inputColumns = [12]; 	// no Needed for non formtype
+		
+		//formGroups[*].elementType
+		formGroup0.elementType = "select";
+		formGroup1.elementType = "select";
+		formGroup2.elementType = "select";
+		formGroup3.elementType = "select";
+		
+		
+		
+		
+		/****************************
+		**    SELECT ONLY PARAMS   **
+		*****************************/		
+		
+		// formGroups[*].style{JSON} 
+		//formGroup0.style= {"font-size" : "30px !important"}	 //Be careful!!  many styles are overrided by chosen, so this mignt not work as expected.
+		
+	
+		//formGroups[*].multiple{Boolean} 
+		formGroup0.multiple = false; //ok, false is null or boolean false, true otherwise incliding string false
+		formGroup1.multiple = false;
+		formGroup2.multiple = false;
+		formGroup3.multiple = true;
+		
+		//formGroup0.rightAling = true;//buggy, do not use it, Will be fixed in next version.		
+		
+		//formGroups[*].chosenOption{Array}:
+		formGroup0.chosenOptions = {"allow_single_deselect": true} //allow_single_deselect: close (deselect) button at one side of the select
+		formGroup1.chosenOptions = {"disable_search": true}
+		formGroup2.chosenOptions = {"disable_search_threshold": 50}
+		formGroup3.chosenOptions = {"enable_split_word_search": false}
+		
+
+		
+		var optGropups0 = []
+		var optGropups1 = []
+		var optGropups2 = []
+		var optGropups3 = []
+		//formGroups[*].optgroups{Array} 
+		formGroup0.optgroups = optGropups0	 
+		formGroup1.optgroups = optGropups1	
+		formGroup2.optgroups = optGropups2	
+		formGroup3.options = options0	
+		
+		var optGroup00 = {}
+		var optGroup01 = {}
+		var optGroup02 = {}
+	//	var optGroup03 = {}
+		
+		//formGroups[*].optgroups.label{String}
+		optGroup00.label = "ESPAÑOL";
+		optGroup00.options = options0;
+		
+		optGroup01.label = "ESPAÑOL";
+		optGroup01.options = options0;
+		
+		optGroup02.label = "ESPAÑOL";
+		optGroup02.options = options0;
+		
+//		optGroup03.label = "ESPAÑOL";
+//		optGroup03.options = options0;
+		
+		
+		var optGroup10 = {}
+		var optGroup11 = {}
+		var optGroup12 = {}
+		var optGroup13 = {}
+		
+		optGroup10.label = "DEUTSCH";
+		optGroup10.options = options1;	
+		
+		optGroup11.label = "DEUTSCH";
+		optGroup11.options = options1;
+		
+		optGroup12.label = "DEUTSCH";
+		optGroup12.options = options1;
+		
+//		optGroup13.label = "DEUTSCH";
+//		optGroup13.options = options1;
+		
+		
+		
+		var optGroup20 = {}
+		optGroup20.label = "ENGLISH";
+		optGroup20.options = options2;
+
+
+		
+		
+		optGropups0.push(optGroup00);
+		optGropups0.push(optGroup10);
+		optGropups0.push(optGroup20);
+		
+		optGropups1.push(optGroup01);
+		optGropups1.push(optGroup11);
+			
+		optGropups2.push(optGroup02);
+		optGropups2.push(optGroup12);			
+
+	
+	
+		
+		
+		
+		
+		/***FORM HORIZONTAL***/
+		
+		
+		
+		
+		
+		/***************************
+		** COMMON FORM PARAMETERS **
+		****************************/
+		//formType{none | horizontal | inline} 
+		form1.formType = 				"horizontal";
+		
+		//formContainerSelector{String} 
+		form1.formContainerSelector = 	".form-container-1";
+		
+		var formGroups = [];
+		
+		//formGroups{Array} 
+		form1.formGroups = formGroups;
+		
+		formGroup0 = {};
+		formGroup1 = {};
+		formGroup2 = {};
+		formGroup3 = {};
+		
+		formGroups.push(formGroup0);
+		formGroups.push(formGroup1);
+		formGroups.push(formGroup2);
+		formGroups.push(formGroup3);
+		
+		//formGroups[*].rowColumns{Array}
+		formGroup0.rowColumns = [12,6 ]; //ok
+		formGroup1.rowColumns = [12,6 ]; 
+		formGroup2.rowColumns = [12,6 ]; 
+		formGroup3.rowColumns = [12,6 ];
+		
+		
+		
+		
+		/***************************
+		** COMMON LABEL PARAMETERS **
+		****************************/		
 		
 		//formGroups[*].labelText{String}
-		formGroup0.labelText = "Select Uno";
-		formGroup1.labelText = "Select Dos";
-		formGroup2.labelText = "Select Tres";
-		formGroup3.labelText = "Select Cuatro";
+		formGroup0.labelText = "Single, Optgrup, allow_single_deselect";
+		formGroup1.labelText = "Single, Optgrup, disable_search";
+		formGroup2.labelText = "Single, Optgrup, disable_search_threshold:50";
+		formGroup3.labelText = "Multiple, enable_split_word_search";
 		
 		//formGroups[*].labelColumns{Array} 
 		//formGroup0.labelColumns = [4];  // no neded for none formtype
@@ -169,15 +341,15 @@
 		formGroup0.multiple = false; //ok, false is null or boolean false, true otherwise incliding string false
 		formGroup1.multiple = false;
 		formGroup2.multiple = false;
-		formGroup3.multiple = false;
+		formGroup3.multiple = true;
 		
 		//formGroup0.rightAling = true;//buggy, do not use it, Will be fixed in next version.		
 		
 		//formGroups[*].chosenOption{Array}:
 		formGroup0.chosenOptions = {"allow_single_deselect": true} //allow_single_deselect: close (deselect) button at one side of the select
-		formGroup1.chosenOptions = {"allow_single_deselect": true}
-		formGroup2.chosenOptions = {"allow_single_deselect": true}
-		formGroup3.chosenOptions = {"allow_single_deselect": true}
+		formGroup1.chosenOptions = {"disable_search": true}
+		formGroup2.chosenOptions = {"disable_search_threshold": 50}
+		formGroup3.chosenOptions = {"enable_split_word_search": false}
 		
 
 		
@@ -189,12 +361,12 @@
 		formGroup0.optgroups = optGropups0	 
 		formGroup1.optgroups = optGropups1	
 		formGroup2.optgroups = optGropups2	
-		formGroup3.optgroups = optGropups3	
+		formGroup3.options = options0	
 		
 		var optGroup00 = {}
 		var optGroup01 = {}
 		var optGroup02 = {}
-		var optGroup03 = {}
+	//	var optGroup03 = {}
 		
 		//formGroups[*].optgroups.label{String}
 		optGroup00.label = "ESPAÑOL";
@@ -206,8 +378,8 @@
 		optGroup02.label = "ESPAÑOL";
 		optGroup02.options = options0;
 		
-		optGroup03.label = "ESPAÑOL";
-		optGroup03.options = options0;
+//		optGroup03.label = "ESPAÑOL";
+//		optGroup03.options = options0;
 		
 		
 		var optGroup10 = {}
@@ -224,8 +396,8 @@
 		optGroup12.label = "DEUTSCH";
 		optGroup12.options = options1;
 		
-		optGroup12.label = "DEUTSCH";
-		optGroup12.options = options1;
+//		optGroup13.label = "DEUTSCH";
+//		optGroup13.options = options1;
 		
 		
 		
@@ -244,18 +416,212 @@
 		optGropups1.push(optGroup11);
 			
 		optGropups2.push(optGroup02);
-		optGropups2.push(optGroup12);		
+		optGropups2.push(optGroup12);	
 		
-		optGropups3.push(optGroup03);
-	//	optGropups3.push(optGroup13);
+		
+		
+		
+		/***FORM INLINE***/
+		
+		
+		/***************************
+		** COMMON FORM PARAMETERS **
+		****************************/
+		//formType{none | horizontal | inline} 
+		form2.formType = 				"inline";
+		
+		//formContainerSelector{String} 
+		form2.formContainerSelector = 	".form-container-2";
+		
+		var formGroups = [];
+		
+		//formGroups{Array} 
+		form2.formGroups = formGroups;
+		
+		formGroup0 = {};
+		formGroup1 = {};
+		formGroup2 = {};
+		formGroup3 = {};
+		
+		formGroups.push(formGroup0);
+		formGroups.push(formGroup1);
+		formGroups.push(formGroup2);
+		formGroups.push(formGroup3);
+		
+		//formGroups[*].rowColumns{Array}
+		formGroup0.rowColumns = [12,6 ]; //ok
+		formGroup1.rowColumns = [12,6 ]; 
+		formGroup2.rowColumns = [12,6 ]; 
+		formGroup3.rowColumns = [12,6 ];
+		
+		
+		
+		
+		/***************************
+		** COMMON LABEL PARAMETERS **
+		****************************/		
+		
+		//formGroups[*].labelText{String}
+		formGroup0.labelText = "Single, Optgrup, allow_single_deselect";
+		formGroup1.labelText = "Single, Optgrup, disable_search";
+		formGroup2.labelText = "Single, Optgrup, disable_search_threshold:50";
+		formGroup3.labelText = "Multiple, enable_split_word_search";
+		
+		//formGroups[*].labelColumns{Array} 
+		//formGroup0.labelColumns = [4];  // no neded for none formtype
+	
+		
+		/***************************
+		** COMMON INPUT PARAMETERS **
+		****************************/		
+		
+		//formGroups[*].inputId{String}
+		formGroup0.inputId = "select1";
+		formGroup1.inputId = "select2";
+		formGroup2.inputId = "select3";
+		formGroup3.inputId = "select4"; //a
+		
+		
+		//formGroups[*].inputColumns{Array} 
+		//formGroup0.inputColumns = [12]; 	// no Needed for non formtype
+		
+		//formGroups[*].elementType
+		formGroup0.elementType = "select";
+		formGroup1.elementType = "select";
+		formGroup2.elementType = "select";
+		formGroup3.elementType = "select";
+		
+		
+		
+		
+		/****************************
+		**    SELECT ONLY PARAMS   **
+		*****************************/		
+		
+		// formGroups[*].style{JSON} 
+		//formGroup0.style= {"font-size" : "30px !important"}	 //Be careful!!  many styles are overrided by chosen, so this mignt not work as expected.
+		
+		
+		//formGroups[*].multiple{Boolean} 
+		formGroup0.multiple = false; //ok, false is null or boolean false, true otherwise incliding string false
+		formGroup1.multiple = false;
+		formGroup2.multiple = false;
+		formGroup3.multiple = true;
+		
+		//formGroup0.rightAling = true;//buggy, do not use it, Will be fixed in next version.		
+		
+		//formGroups[*].chosenOption{Array}:
+		formGroup0.chosenOptions = {"allow_single_deselect": true} //allow_single_deselect: close (deselect) button at one side of the select
+		formGroup1.chosenOptions = {"disable_search": true}
+		formGroup2.chosenOptions = {"disable_search_threshold": 50}
+		formGroup3.chosenOptions = {"enable_split_word_search": false}
+		
 
 		
+		var optGropups0 = []
+		var optGropups1 = []
+		var optGropups2 = []
+		var optGropups3 = []
+		//formGroups[*].optgroups{Array} 
+		formGroup0.optgroups = optGropups0	 
+		formGroup1.optgroups = optGropups1	
+		formGroup2.optgroups = optGropups2	
+		formGroup3.options = options0	
+		
+		var optGroup00 = {}
+		var optGroup01 = {}
+		var optGroup02 = {}
+	//	var optGroup03 = {}
+		
+		//formGroups[*].optgroups.label{String}
+		optGroup00.label = "ESPAÑOL";
+		optGroup00.options = options0;
+		
+		optGroup01.label = "ESPAÑOL";
+		optGroup01.options = options0;
+		
+		optGroup02.label = "ESPAÑOL";
+		optGroup02.options = options0;
+		
+//		optGroup03.label = "ESPAÑOL";
+//		optGroup03.options = options0;
+		
+		
+		var optGroup10 = {}
+		var optGroup11 = {}
+		var optGroup12 = {}
+		var optGroup13 = {}
+		
+		optGroup10.label = "DEUTSCH";
+		optGroup10.options = options1;	
+		
+		optGroup11.label = "DEUTSCH";
+		optGroup11.options = options1;
+		
+		optGroup12.label = "DEUTSCH";
+		optGroup12.options = options1;
+		
+//		optGroup13.label = "DEUTSCH";
+//		optGroup13.options = options1;
+		
+		
+		
+		var optGroup20 = {}
+		optGroup20.label = "ENGLISH";
+		optGroup20.options = options2;
+
 
 		
-		console.log(JSON.stringify(form0))
+		
+		optGropups0.push(optGroup00);
+		optGropups0.push(optGroup10);
+		optGropups0.push(optGroup20);
+		
+		optGropups1.push(optGroup01);
+		optGropups1.push(optGroup11);
+			
+		optGropups2.push(optGroup02);
+		optGropups2.push(optGroup12);	
 		
 		
+		
+		
+		
+		editMyForm.getForm(form2);
+		editMyForm.getForm(form1);
 		editMyForm.getForm(form0);
+		
+		
+	
+
+		/*
+		
+		
+		
+		
+		formGroup0.rowColumns = [10]; 
+		formGroup1.rowColumns = [10]; 
+		formGroup2.rowColumns = [10]; 
+		formGroup3.rowColumns = [10];
+		
+		
+		
+		formGroup0.labelColumns = [3];  // no neded for none formtype
+		formGroup0.inputColumns = [3]; 	// no Needed for non formtype
+
+	
+		console.log(JSON.stringify(form1))
+		
+		editMyForm.getForm(form1);
+		
+		*/
+		
+		
+		
+		
+		
+		//editMyForm.getForm(form2);
+		
 	
 	
 		
@@ -319,6 +685,8 @@
 			<form class="col-md-12 form-container-0"></form>
 		</div>
 	</div>
+	
+	
 	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
 		<div class="row">
 			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">
@@ -329,6 +697,9 @@
 			<form class="col-md-12 form-container-1"></form>
 		</div>	
 	</div>
+	
+	
+	
 	<div style="margin-top:35px;margin-left:25px;margin-right:25px;">
 		<div class="row">
 			<div class="class="col-md-12" style="text-align:center; margin-bottom:15px;">

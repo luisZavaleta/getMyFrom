@@ -1,0 +1,80 @@
+									<!--
+									############################################################################
+									############################################################################
+									##### 	This file is NOT being used, it just a representation of       #####
+									#####	"minHtml" variable  in the editMyFormJS.js javascript file.    #####
+									############################################################################
+									############################################################################
+									 -->
+
+<div style="display: none">
+	<div id="emf-form">
+		<form role="form" class="%formClass%">%emfFormContent%</form>
+	</div>
+	<div id="emf-formGroup">
+		<div class="form-group %emfFormGroupWidth%">%emfFormGroupLabel% %emfFormGroupInput%</div>
+	</div>
+	<div id="emf-formLabel">
+		<label style="" class="%emfFormLabelClass%" for="%emfFormLabelFor%"> %emfFormLabelValue% </label>
+	</div>
+	<div id="emf-formInput">
+		%emfFormInputBefore%
+		<input type="%emfFormInputType%" style="" class="form-control" id="%emfFormInputId%" placeholder="%emfFormInputPlaceHolder%" />
+		%emfFormInputAfter%
+	</div>
+	<div id="emf-formTextarea">
+		%emfFormInputBefore%
+		<textarea type="%emfFormInputType%" style="" rows="%emfFormTextareaRows%" class="form-control" id="%emfFormInputId%"
+			placeholder="%emfFormInputPlaceHolder%"></textarea>
+		%emfFormInputAfter%
+	</div>
+	<div id="emf-formCheckbox">
+		%emfFormCheckboxBefore%
+		<label class="%emfFormCheckboxLabelClass%">
+			<input %disabled% id="%emfFormCheckboxId%" name="%emfFormCheckboxName%" type="%checkOrRadioType%" value="%emfFormCheckboxValue%">
+			%emfFormCheckboxText%
+		</label>
+		%emfFormCheckboxAfter%
+	</div>
+	<!-- SELECT -->
+	<div id="emf-formSelect">
+		%emfFormSelectBefore%
+		<select id="%emfFormSelectId%" data-placeholder="%emfSelectPlaceholder%">%emfSelectOptions%
+		</select>
+		%emfFormSelectAfter%
+	</div>
+	<!-- STACKED -->
+	<div class="checkbox">
+		<label>
+			<input id="wereva" name="mustbethesame" type="checkbox" value="">
+			rojo
+		</label>
+	</div>
+	<!-- INLINE -->
+	<label class="checkbox-inline">
+		<input id="inlineCheckbox1" name="mustbethesame" type="checkbox" value="option1">
+		1wwww
+	</label>
+	
+	
+	<!-- IMAGE -->
+	
+	<div id="emf-formImage">
+		%emfFormImageBefore%
+			<div class="fileinput fileinput-new form-control" id="%emfImageId%" data-provides="fileinput" >
+				<div class="fileinput-new thumbnail">
+					<img src="%emfImagePath%" alt="..." />
+				</div>
+				<div class="fileinput-preview fileinput-exists thumbnail"  ></div>
+				<div>
+					<span class="btn btn-default btn-file">
+						<span class="fileinput-new">%emfImageSelectText%</span>
+						<span class="fileinput-exists">%emfImageChangeText%</span>
+						<input type="file" name="..." />
+					</span>
+					<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">%emfImageDeleteText%</a>
+				</div>
+			</div>
+		%emfFormImageAfter%
+	</div>
+</div>	

@@ -7,26 +7,48 @@
  */
 
 
-var debug = false;
-var minHtml = '<div style="display: none"><div id="emf-form"><form role="form" class="%formClass%">%emfFormContent%</form></div><div id="emf-formGroup"><div class="form-group %emfFormGroupWidth%">%emfFormGroupLabel% %emfFormGroupInput%</div></div><div id="emf-formLabel"><label style="%emfFormLabelStyle%"  class="%emfFormLabelClass%" for="%emfFormLabelFor%"> %emfFormLabelValue% </label></div><div id="emf-formInput">%emfFormInputBefore%<input type="%emfFormInputType%" style="" class="form-control" id="%emfFormInputId%"placeholder="%emfFormInputPlaceHolder%" />%emfFormInputAfter%</div><div id="emf-formTextarea">%emfFormInputBefore%<textarea type="%emfFormInputType%" style="" rows="%emfFormTextareaRows%" class="form-control" id="%emfFormInputId%"placeholder="%emfFormInputPlaceHolder%"></textarea>%emfFormInputAfter%</div><div id="emf-formCheckbox">%emfFormCheckboxBefore%<label class="%emfFormCheckboxLabelClass%"><input %disabled% id="%emfFormCheckboxId%" name="%emfFormCheckboxName%" type="%checkOrRadioType%"value="%emfFormCheckboxValue%">%emfFormCheckboxText%</label>%emfFormCheckboxAfter%</div><!-- SELECT --><div id="emf-formSelect">%emfFormSelectBefore%<select id="%emfFormSelectId%" data-placeholder="%emfSelectPlaceholder%" >%emfSelectOptions%</select>%emfFormSelectAfter%</div><!-- STACKED --><div class="checkbox"><label><input id="wereva" name="mustbethesame" type="checkbox" value="">rojo</label></div><!-- INLINE --><label class="checkbox-inline"><input id="inlineCheckbox1" name="mustbethesame" type="checkbox" value="option1">1wwww</label></div>';
+var debug = true;
+//var minHtml = '<div style="display: none"><div id="emf-form"><form role="form" class="%formClass%">%emfFormContent%</form></div><div id="emf-formGroup"><div class="form-group %emfFormGroupWidth%">%emfFormGroupLabel% %emfFormGroupInput%</div></div><div id="emf-formLabel"><label style="%emfFormLabelStyle%"  class="%emfFormLabelClass%" for="%emfFormLabelFor%"> %emfFormLabelValue% </label></div><div id="emf-formInput">%emfFormInputBefore%<input type="%emfFormInputType%" style="" class="form-control" id="%emfFormInputId%"placeholder="%emfFormInputPlaceHolder%" />%emfFormInputAfter%</div><div id="emf-formTextarea">%emfFormInputBefore%<textarea type="%emfFormInputType%" style="" rows="%emfFormTextareaRows%" class="form-control" id="%emfFormInputId%"placeholder="%emfFormInputPlaceHolder%"></textarea>%emfFormInputAfter%</div><div id="emf-formCheckbox">%emfFormCheckboxBefore%<label class="%emfFormCheckboxLabelClass%"><input %disabled% id="%emfFormCheckboxId%" name="%emfFormCheckboxName%" type="%checkOrRadioType%"value="%emfFormCheckboxValue%">%emfFormCheckboxText%</label>%emfFormCheckboxAfter%</div><!-- SELECT --><div id="emf-formSelect">%emfFormSelectBefore%<select id="%emfFormSelectId%" data-placeholder="%emfSelectPlaceholder%" >%emfSelectOptions%</select>%emfFormSelectAfter%</div><!-- STACKED --><div class="checkbox"><label><input id="wereva" name="mustbethesame" type="checkbox" value="">rojo</label></div><!-- INLINE --><label class="checkbox-inline"><input id="inlineCheckbox1" name="mustbethesame" type="checkbox" value="option1">1wwww</label></div>';
+
+
+
+
+var minHtml = '<div style="display: none"><div id="emf-form"><form role="form" class="%formClass%">%emfFormContent%</form></div><div id="emf-formGroup"><div class="form-group %emfFormGroupWidth%">%emfFormGroupLabel% %emfFormGroupInput%</div></div><div id="emf-formLabel"><label style="" class="%emfFormLabelClass%" for="%emfFormLabelFor%"> %emfFormLabelValue% </label></div><div id="emf-formInput">%emfFormInputBefore%<input type="%emfFormInputType%" style="" class="form-control" id="%emfFormInputId%" placeholder="%emfFormInputPlaceHolder%" />%emfFormInputAfter%</div><div id="emf-formTextarea">%emfFormInputBefore%<textarea type="%emfFormInputType%" style="" rows="%emfFormTextareaRows%" class="form-control" id="%emfFormInputId%"placeholder="%emfFormInputPlaceHolder%"></textarea>%emfFormInputAfter%</div><div id="emf-formCheckbox">%emfFormCheckboxBefore%<label class="%emfFormCheckboxLabelClass%"><input %disabled% id="%emfFormCheckboxId%" name="%emfFormCheckboxName%" type="%checkOrRadioType%" value="%emfFormCheckboxValue%">%emfFormCheckboxText%</label>%emfFormCheckboxAfter%</div><!-- SELECT --><div id="emf-formSelect">%emfFormSelectBefore%<select id="%emfFormSelectId%" data-placeholder="%emfSelectPlaceholder%">%emfSelectOptions%</select>%emfFormSelectAfter%</div><!-- STACKED --><div class="checkbox"><label><input id="wereva" name="mustbethesame" type="checkbox" value="">rojo</label></div><!-- INLINE --><label class="checkbox-inline"><input id="inlineCheckbox1" name="mustbethesame" type="checkbox" value="option1">1wwww</label><!-- IMAGE --><div id="emf-formImage">%emfFormImageBefore%<div class="fileinput fileinput-new form-control" id="%emfImageId%" data-provides="fileinput" ><div class="fileinput-new thumbnail"><img src="%emfImagePath%" alt="..." /></div><div class="fileinput-preview fileinput-exists thumbnail" ></div><div><span class="btn btn-default btn-file"><span class="fileinput-new">%emfImageSelectText%</span><span class="fileinput-exists">%emfImageChangeText%</span><input type="file" name="..." /></span><a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">%emfImageDeleteText%</a></div></div>%emfFormImageAfter%</div></div>';
+//var minHtml = '';
+//var minHtml = '';
+//var minHtml = '';
+//var minHtml = '';
+//var minHtml = '';
+//var minHtml = '';
+
+
+
+
+
+
+
+
+
+
 var editMyForm = {};
 
 /**
  * VARIABLES
  */
 
-editMyForm.FORM_TYPE_DEFAULT = 0;
-editMyForm.FORM_TYPE_HORIZONTAL = 1;
-editMyForm.FORM_TYPE_INLINE = 2;
+editMyForm.FORM_TYPE_DEFAULT = 		0;
+editMyForm.FORM_TYPE_HORIZONTAL = 	1;
+editMyForm.FORM_TYPE_INLINE = 		2;
 
-editMyForm.ELEMENT_TYPE_INPUT = 0;
-editMyForm.ELEMENT_TYPE_TEXTAREA = 1;
-editMyForm.ELEMENT_TYPE_CHECKBOX = 2;
-editMyForm.ELEMENT_TYPE_RADIOBUTTON = 3;
-editMyForm.ELEMENT_TYPE_SELECT = 4;
+editMyForm.ELEMENT_TYPE_INPUT = 		0;
+editMyForm.ELEMENT_TYPE_TEXTAREA = 		1;
+editMyForm.ELEMENT_TYPE_CHECKBOX = 		2;
+editMyForm.ELEMENT_TYPE_RADIOBUTTON = 	3;
+editMyForm.ELEMENT_TYPE_SELECT = 		4;
+editMyForm.ELEMENT_TYPE_IMAGE = 		5;
 
-editMyForm.ELEMENT_CHECKBOX_STACKED = 0;
-editMyForm.ELEMENT_CHECKBOX_INLINE = 1;
+editMyForm.ELEMENT_CHECKBOX_STACKED = 	0;
+editMyForm.ELEMENT_CHECKBOX_INLINE = 	1;
 
 /**
  * ARRAYS
@@ -60,6 +82,13 @@ var checkOrRadioType = [];
 
 checkOrRadioType[editMyForm.ELEMENT_TYPE_CHECKBOX] = 'checkbox';
 checkOrRadioType[editMyForm.ELEMENT_TYPE_RADIOBUTTON] = 'radio';
+
+
+var emfFormImageDivBefore = ["","",""];
+var emfFormImageDivAfter = ["","",""];
+
+
+
 
 /**
  * Generates a Boostrap 3 form dinamically, the form can have inputs, text areas, checkox,
@@ -538,6 +567,11 @@ editMyForm.getFormGroupInputElement = function(formTypeInt, inputElementParams, 
 		case "select":	
 			htmlFormGroup = editMyForm.getFormGroupSelect(formTypeInt, inputElementParams, containerSelector);
 			break;
+			
+		case "image":
+				htmlFormGroup = editMyForm.getFormGroupImage(formTypeInt, inputElementParams, containerSelector);
+			break;	
+			
 		case "input":
 		default:
 			htmlFormGroup =  editMyForm.getFormGroupInputOrTextArea(formTypeInt, editMyForm.ELEMENT_TYPE_INPUT, inputElementParams);
@@ -805,6 +839,92 @@ editMyForm.getFormGroupSelect = function(formTypeInt, selectParams, containerSel
 	return htmlTemplateSelect;
 };
 
+
+
+
+
+
+/**
+ * @param formTypeInt
+ * @param selectParams.id{String} Id of the select.
+ * @param selectParams.inputColumns{Array} Array with the width in columns of the element, the
+ *        number of elements in the array defines the use of them as follow <br>
+ *        <code>
+ *        		{1 : 	[0: xm, sm, md, lg]},
+ *        		{2: 	[0:	xm, sm]			[1: md, lg]},  
+ *        		{3: 	[0: xm, sm]			[1: md]			[2: lg]},
+ *        		{4: 	[0:	xm]				[1: sm]			[2: md]			[3: lg]}
+ *        </code>
+ * @param css:  JSON Object with scc properties to be aplied to the images. ==DEPRECATED: Will be set again in next version==
+ * @param image: Path of default image.
+ * @param selectText:
+ * @param changeText
+ * @param deleteText:
+ */
+
+
+editMyForm.getFormGroupImage = function(formTypeInt, imageParams) {
+	
+	
+	/*
+	var imageParams = {};
+	imageParams.css = {
+		"width" : '100px',
+		"height" : '100px'
+	};	
+	imageParams.image = "http://img-9gag-lol.9cache.com/photo/anXQwq5_460s.jpg";
+	
+	
+*/
+	
+	
+	var htmlTemplateImage = $("#emf-formImage").html();
+	
+	
+	console.log("htmlTemplateImage ====>"+htmlTemplateImage);
+	
+	//$(".fileinput.fileinput-new.form-control img").attr("style", JSON.toCssString(imageParams.css));	
+	
+	
+	
+	if(!imageParams.selectText){
+		imageParams.selectText = "Seleccionar...";
+	}
+	if(!imageParams.changeText){
+		imageParams.changeText = "Cambiar...";
+	}
+	if(!imageParams.deleteText){
+		imageParams.deleteText = "Eliminar..";
+	}
+	
+	
+	
+	htmlTemplateImage = vulcanoUtil.template(htmlTemplateImage, {
+		
+		
+		emfImageId : imageParams.id,
+		emfImagePath : imageParams.image,		
+		emfFormImageBefore: editMyForm.getFormGroupInputDivBefore(formTypeInt, imageParams.inputColumns),
+		emfFormImageAfter: emfFormImageDivAfter[formTypeInt],
+		
+		emfImageSelectText : imageParams.selectText,		
+		emfImageChangeText : imageParams.changeText,
+		emfImageDeleteText : imageParams.deleteText
+	});
+	
+	
+	
+	
+
+
+	
+		return 	htmlTemplateImage;//editMyForm.generateHtmlImageEditor(imageParams, formTypeInt); 
+};
+
+
+
+
+
 /**
  * @param options{Array} Specify the different options in this select.
  * @param options.value{String} Value that will be set when the option is selected, default text
@@ -1028,3 +1148,24 @@ editMyForm.getSizeCssClass = function(columns) {
 
 	}
 };
+
+
+
+							/****************************
+							 **** IMAGE FUNCTIONS    ****
+							 ****************************/
+
+
+
+/*
+
+	<div class="fileinput-new thumbnail" style="display:block">		
+		<img style="width:100px;height:100px;" src="http://img-9gag-lol.9cache.com/photo/anXQwq5_460s.jpg" alt="...">	
+	</div>
+	
+	
+	<div class="fileinput-new thumbnail" style="display:block">		
+	<img style="width:100px;height:100px;" src="http://img-9gag-lol.9cache.com/photo/anXQwq5_460s.jpg" alt="...">	
+	</div>
+
+*/

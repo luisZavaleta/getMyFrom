@@ -100,7 +100,7 @@ function saveModal() {
 
 	$(document).on("click", ".guardar-modal-vcms", function() {
 		
-		console.log("Closing modal...")
+		console.log("Closing modal...");
 
 		var data = getAttrDataFromModal($("#vulcano-cms-modal"), [ "data-vwe-type" ]);
 

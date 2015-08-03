@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+
+.fileinput.fileinput-new .fileinput-new.thumbnail{
+	display:block;
+}
+
+
+.fileinput.fileinput-exists .fileinput-preview.fileinput-exists.thumbnail{
+	display:block;
+}
+
+
+
+
+.fileinput.fileinput-new.form-control {
+    height: auto;
+}
+
+
+.fileinput.form-control.fileinput-exists{
+    height: auto;	
+}
